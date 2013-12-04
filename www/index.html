@@ -18,35 +18,45 @@
     under the License.
 -->
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>C4 Supplier App</title>
-    </head>
-    <body>
-        <div >
-            <h1>Current Jobs</h1>
-            <div id="jobs" >
-                 <p id="tst"> </p>  
-            </div>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>C4 Supplier App</title>
+</head>
+<body>
+    <div>
+        <h1>
+            Current Jobs</h1>
+        <div id="jobs">
+            <p id="tst">
+            </p>
         </div>
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-       <script type="text/javascript" src="js/Jobs.js"></script>
-        <script type="text/javascript">
-            //   app.initialize();
+    </div>
+    <script type="text/javascript" src="phonegap.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/downloadxml.js"></script>
+    <script type="text/javascript" src="js/Jobs.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        //   app.initialize();
+        
+        getLocation();
 
-            var tst = document.getElementById("tst");
-            var jobs = jobs.getJobs();
-            for (var i = 0; i < jobs.length; i++) {
-                job = jobs[i];
-              //  alert(job.JobNumber);
-                tst.innerHTML += job.JobNumber + '<br \>';
-            }
 
+        var tst = document.getElementById("tst");
+        var jobs = jobs.getJobs();
+        for (var i = 0; i < jobs.length; i++) {
+            job = jobs[i]; 
+            tst.innerHTML += job.JobNumber + '<br \>';
+        }
 
-        </script>
-    </body>
+        
+    </script>
+    
+
+</body>
 </html>
