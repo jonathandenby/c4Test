@@ -23,20 +23,30 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Jon Jon Jon</title>
+        <title>C4 Supplier App</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Denby</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+        <div >
+            <h1>Current Jobs</h1>
+            <div id="jobs" >
+                 <p id="tst"> </p>  
             </div>
         </div>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+       <script type="text/javascript" src="js/Jobs.js"></script>
         <script type="text/javascript">
-            app.initialize();
+            //   app.initialize();
+
+            var tst = document.getElementById("tst");
+            var jobs = jobs.getJobs();
+            for (var i = 0; i < jobs.length; i++) {
+                job = jobs[i];
+              //  alert(job.JobNumber);
+                tst.innerHTML += job.JobNumber + '<br \>';
+            }
+
+
         </script>
     </body>
 </html>
